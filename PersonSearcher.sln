@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonService", "PersonService\PersonService.csproj", "{8CDC8BAC-899F-49BF-921E-7780D0289567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonData", "PersonData\PersonData.csproj", "{067BC922-6E7F-46D5-B28B-6C05E86BCD19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CDC8BAC-899F-49BF-921E-7780D0289567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CDC8BAC-899F-49BF-921E-7780D0289567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CDC8BAC-899F-49BF-921E-7780D0289567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CDC8BAC-899F-49BF-921E-7780D0289567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067BC922-6E7F-46D5-B28B-6C05E86BCD19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067BC922-6E7F-46D5-B28B-6C05E86BCD19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067BC922-6E7F-46D5-B28B-6C05E86BCD19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067BC922-6E7F-46D5-B28B-6C05E86BCD19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDF8AD56-2F86-4B28-917B-73BBEB8994F8}
+	EndGlobalSection
+EndGlobal
