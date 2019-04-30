@@ -1,0 +1,21 @@
+<header>
+  <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3'>
+    <div class="container">
+      <a class="navbar-brand" [routerLink]='["/"]'>PersonSearch</a>
+      <ul class="navbar-nav flex-grow">
+        <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+          <a class="nav-link text-dark" [routerLink]='["/"]'>Home</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <a class="nav-link text-dark" [routerLink]='["/add-person"]'>Add Person</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <a class="nav-link text-dark" [routerLink]='["/seed-data"]'>Seed DB</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <a class="nav-link text-dark" [routerLink]='["/reset-data"]'>Reset DB</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

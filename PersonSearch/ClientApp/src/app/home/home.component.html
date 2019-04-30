@@ -1,0 +1,31 @@
+<h1>Search People</h1>
+<div class="add-person-body">
+  <form #searchForm="ngForm" class="form-group" (ngSubmit)="searchPeople(searchForm.value)">
+    <div class="form-inline">
+      <div class="form-group">
+        <input type="text" name="searchText" id="searchtext" class="form-control my-1 mr-sm-2"
+               placeholder="Search Names..." ngModel required>
+        <input type="number" name="maxResultCount" id="maxResultCount" class="form-control my-1 mr-sm-2" placeholder="0" ngModel />
+        <input type="number" name="delayInSeconds" id="delayInSeconds" class="form-control my-1 mr-sm-2" placeholder="0" ngModel />
+      </div>
+      <button type="submit" class="btn btn-primary my-1">Search</button>
+    </div>
+  </form>
+</div>
+<div class="search-results">
+  <table *ngIf="people">
+    <tr *ngFor="let person of people">
+      <td>{{person.givenName}}</td>
+      <td>{{person.familyName}}</td>
+      <td>{{person.address1}}</td>
+      <td>{{person.address2}}</td>
+      <td>{{person.city}}</td>
+      <td>{{person.state}}</td>
+      <td>{{person.country}}</td>
+      <td>{{person.postalCode}}</td>
+      <td>{{person.birthDate}}</td>
+      <td>{{person.photoFileName}}</td>
+      <td>{{person.interests}}</td>
+    </tr>
+</table>
+</div>
