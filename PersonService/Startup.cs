@@ -54,7 +54,7 @@ namespace PersonService
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors();
+            app.UseCors("LocalhostPolicy");
             app.UseMvc();
         }
     }
