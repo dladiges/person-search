@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonService", "PersonService\PersonService.csproj", "{8CDC8BAC-899F-49BF-921E-7780D0289567}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonService", "PersonService\PersonService.csproj", "{8CDC8BAC-899F-49BF-921E-7780D0289567}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonData", "PersonData\PersonData.csproj", "{067BC922-6E7F-46D5-B28B-6C05E86BCD19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonData", "PersonData\PersonData.csproj", "{067BC922-6E7F-46D5-B28B-6C05E86BCD19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonService.Tests", "PersonServiceTests\PersonService.Tests.csproj", "{9F6E45B9-3BAA-413B-A139-1819F11AA4EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{067BC922-6E7F-46D5-B28B-6C05E86BCD19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{067BC922-6E7F-46D5-B28B-6C05E86BCD19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{067BC922-6E7F-46D5-B28B-6C05E86BCD19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F6E45B9-3BAA-413B-A139-1819F11AA4EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F6E45B9-3BAA-413B-A139-1819F11AA4EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F6E45B9-3BAA-413B-A139-1819F11AA4EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F6E45B9-3BAA-413B-A139-1819F11AA4EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
