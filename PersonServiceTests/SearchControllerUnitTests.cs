@@ -28,7 +28,7 @@ namespace PersonService.Tests
             var searchController = new SearchController(mockSearchService.Object);
 
             var stopwatch = Stopwatch.StartNew();
-            var timedResult = searchController.Search("test", 10, 2);
+            var timedResult = searchController.Search(new SearchParameters() { SearchText = "test", MaxResultCount = 10, DelayInSeconds = 2 });
             stopwatch.Stop();
 
             var secondsElapsed = stopwatch.ElapsedMilliseconds / 1000;

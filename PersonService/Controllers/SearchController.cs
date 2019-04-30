@@ -16,13 +16,16 @@ namespace PersonService.Controllers
             this.searchService = searchService;
         }
 
+        //[HttpOptions]
+        //public void Options() { return Ok(); }
+
         // POST api/search/
         [HttpPost]
-        public ActionResult<IList<Person>> Search([FromForm]string searchText, [FromForm] int maxResultCount=10, [FromForm] int searchDelaySeconds = 0)
+        public ActionResult<IList<Person>> Search(SearchParameters searchParameters)
         {
-            DelayResponse(searchDelaySeconds);
+            DelayResponse(searchParameters.DelayInSeconds);
 
-            var matchedPeople = searchService.SearchPeople(searchText, maxResultCount);
+            var matchedPeople = searchService.SearchPeople(searchParameters.SearchText, searchParameters.MaxResultCount);
 
             return matchedPeople;
         }
