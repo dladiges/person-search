@@ -1,37 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading;
 using Microsoft.AspNetCore.Mvc;
 using PersonData;
 
-namespace SearchService.Controllers
+namespace PersonService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class SearchController : ControllerBase
     {
-        private readonly SearchContext context;
+        private readonly ISearchService searchService;
 
-        public SearchController(SearchContext context)
+        public SearchController(ISearchService searchService)
         {
-            this.context = context;
+            this.searchService = searchService;
         }
 
         // POST api/search/
         [HttpPost]
-        public ActionResult<IList<Person>> Search([FromForm]string searchText,[FromForm] int maxResultCount=10,[FromForm] int searchDelaySeconds = 0)
+        public ActionResult<IList<Person>> Search([FromForm]string searchText, [FromForm] int maxResultCount=10, [FromForm] int searchDelaySeconds = 0)
         {
             DelayResponse(searchDelaySeconds);
 
-            if (string.IsNullOrWhiteSpace(searchText))
-                return new List<Person>();
-
-            var matchedPeople = context.People
-                .Where(x => x.GivenName.Contains(searchText) || x.FamilyName.Contains(searchText))
-                .OrderBy(x => x.GivenName).ThenBy(x => x.FamilyName)
-                .Take(maxResultCount)
-                .ToList();
+            var matchedPeople = searchService.SearchPeople(searchText, maxResultCount);
 
             return matchedPeople;
         }

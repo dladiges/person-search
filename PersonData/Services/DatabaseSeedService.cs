@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace PersonData
 {
-    public static class Seeder
+    public class DatabaseSeedService : IDatabaseSeedService
     {
-        public static void SeedData(SearchContext context)
+        private readonly SearchContext context;
+
+        public DatabaseSeedService(SearchContext context)
+        {
+            this.context = context;
+        }
+
+        public void Seed()
         {
             context.Database.EnsureCreated();
 
+            // Don't reseed when people exist in the database
             if (context.People.Any())
                 return;
 

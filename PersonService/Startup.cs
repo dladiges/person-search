@@ -39,6 +39,10 @@ namespace PersonService
             services.AddDbContext<SearchContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("SearchConnection")));
 
+            services.AddScoped<IDatabaseResetService, DatabaseResetService>();
+            services.AddScoped<IDatabaseSeedService, DatabaseSeedService>();
+            services.AddScoped<ISearchService, SearchService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

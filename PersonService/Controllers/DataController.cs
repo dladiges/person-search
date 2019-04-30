@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PersonData;
@@ -12,11 +9,13 @@ namespace PersonService.Controllers
     [ApiController]
     public class DataController : ControllerBase
     {
-        private readonly PersonData.SearchContext context;
+        private readonly IDatabaseResetService resetService;
+        private readonly IDatabaseSeedService seedService;
 
-        public DataController(SearchContext context)
+        public DataController(IDatabaseResetService resetService, IDatabaseSeedService seedService)
         {
-            this.context = context;
+            this.resetService = resetService;
+            this.seedService = seedService;
         }
 
         // POST api/data/seed
@@ -25,7 +24,7 @@ namespace PersonService.Controllers
         {
             try
             {
-                Seeder.SeedData(context);
+                seedService.Seed();
                 return Ok();
             }
             catch (Exception e)
@@ -40,7 +39,7 @@ namespace PersonService.Controllers
         {
             try
             {
-                Resetter.ResetData(context);
+                resetService.Reset();
                 return Ok();
             }
             catch (Exception e)
