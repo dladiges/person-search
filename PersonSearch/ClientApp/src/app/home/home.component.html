@@ -13,7 +13,22 @@
   </form>
 </div>
 <div class="search-results">
-  <table *ngIf="people">
+  <table *ngIf="people" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Address</td>
+        <td>Address</td>
+        <td>City</td>
+        <td>State</td>
+        <td>Postal Code</td>
+        <td>Birth Date</td>
+        <td>Photo</td>
+        <td>Interests</td>
+      </tr>
+    </thead>
+    <tbody>
     <tr *ngFor="let person of people">
       <td>{{person.givenName}}</td>
       <td>{{person.familyName}}</td>
@@ -21,11 +36,19 @@
       <td>{{person.address2}}</td>
       <td>{{person.city}}</td>
       <td>{{person.state}}</td>
-      <td>{{person.country}}</td>
       <td>{{person.postalCode}}</td>
       <td>{{person.birthDate}}</td>
-      <td>{{person.photoFileName}}</td>
-      <td>{{person.interests}}</td>
+      <td>
+        {{person.photoFileName}}
+      </td>
+      <td>
+        <ul ngIf="person.interests"  ngFor="let interest of person.interests">
+          <li>
+            {{interest}}
+          </li>
+        </ul>
+      </td>
     </tr>
-</table>
+    </tbody>
+  </table>
 </div>
