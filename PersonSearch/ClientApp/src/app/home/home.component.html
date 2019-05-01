@@ -1,5 +1,5 @@
 <h1>Search People</h1>
-<div class="add-person-body">
+<div class="search-form-body">
   <form #searchForm="ngForm" class="form-group" (ngSubmit)="searchPeople(searchForm.value)">
     <div class="form-inline">
       <div class="form-group">
@@ -37,14 +37,14 @@
       <td>{{person.city}}</td>
       <td>{{person.state}}</td>
       <td>{{person.postalCode}}</td>
-      <td>{{person.birthDate}}</td>
+      <td>{{person.birthDate | date : "yyyy-MM-dd" }}</td>
       <td>
         {{person.photoFileName}}
       </td>
       <td>
-        <ul ngIf="person.interests"  ngFor="let interest of person.interests">
+        <ul  *ngFor="let interest of (person.interests ? person.interests.slice(0,3): [])" class="list">
           <li>
-            {{interest}}
+            {{interest.name}}
           </li>
         </ul>
       </td>

@@ -1,3 +1,5 @@
+import { Interest } from "./interest";
+
 export interface Person {
   address1: string;
   address2: string;
@@ -6,7 +8,7 @@ export interface Person {
   country: string;
   familyName: string;
   givenName: string;
-  interests: string[];
+  interests: Interest[];
   middleName: string;
   personId: number;
   photoFileName: string;
