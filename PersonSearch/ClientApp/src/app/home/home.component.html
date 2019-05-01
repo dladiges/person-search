@@ -16,24 +16,20 @@
   <table *ngIf="people" class="table">
     <thead class="thead-dark">
       <tr>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Address</td>
-        <td>Address</td>
-        <td>City</td>
-        <td>State</td>
-        <td>Postal Code</td>
-        <td>Birth Date</td>
-        <td>Photo</td>
-        <td>Interests</td>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Postal Code</th>
+        <th>Birth Date</th>
+        <th>Photo</th>
+        <th>Interests</th>
       </tr>
     </thead>
     <tbody>
     <tr *ngFor="let person of people">
-      <td>{{person.givenName}}</td>
-      <td>{{person.familyName}}</td>
-      <td>{{person.address1}}</td>
-      <td>{{person.address2}}</td>
+      <td>{{person.givenName}} {{person.familyName}}</td>
+      <td>{{person.address1}} <br/> {{person.address2}}</td>
       <td>{{person.city}}</td>
       <td>{{person.state}}</td>
       <td>{{person.postalCode}}</td>
@@ -42,8 +38,8 @@
         {{person.photoFileName}}
       </td>
       <td>
-        <ul  *ngFor="let interest of (person.interests ? person.interests.slice(0,3): [])" class="list">
-          <li>
+        <ul  *ngFor="let interest of (person.interests ? person.interests.slice(0,3): [])" class="list-group list-group-flush">
+          <li class="list-group-item">
             {{interest.name}}
           </li>
         </ul>
