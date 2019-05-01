@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  personapi: 'http://localhost:5168/api/'
 };
