@@ -3,3 +3,8 @@
 <p>This destructively clears the database (deleting and recreating an empty database). Use with care.</p>
 
 <button class="btn btn-primary" (click)="resetData()">Reset Database</button>
+
+<div>
+  <p *ngIf="success">Database reset complete!</p>
+  <p *ngIf="failure">Database reset failed</p>
+</div>

@@ -5,15 +5,18 @@
       <div class="form-group">
         <input type="text" name="searchText" id="searchtext" class="form-control my-1 mr-sm-2"
                placeholder="Search Names..." ngModel required>
-        <input type="number" name="maxResultCount" id="maxResultCount" class="form-control my-1 mr-sm-2" placeholder="0" ngModel />
-        <input type="number" name="delayInSeconds" id="delayInSeconds" class="form-control my-1 mr-sm-2" placeholder="0" ngModel />
+        <input type="text" name="maxResultCount" id="maxResultCount" class="form-control my-1 mr-sm-2"
+               placeholder="Maximum Result Count" pattern="[0-9]+"  ngModel />
+        <input type="text" name="delayInSeconds" id="delayInSeconds" class="form-control my-1 mr-sm-2"
+               placeholder="Delay in Seconds" pattern="[0-9]+" ngModel />
       </div>
-      <button type="submit" class="btn btn-primary my-1">Search</button>
+      <button id="submitsearch" name="submitsearch" type="submit" class="btn btn-primary my-1">Search</button>
+      <div id="loadingspinner" *ngIf="loading" class="lds-dual-ring"></div>
     </div>
   </form>
 </div>
-<div class="search-results">
-  <table *ngIf="people" class="table">
+<div *ngIf="people" class="search-results" name="searchresults" id="searchresults">
+  <table class="table">
     <thead class="thead-dark">
       <tr>
         <th>Name</th>
@@ -35,7 +38,7 @@
       <td>{{person.postalCode}}</td>
       <td>{{person.birthDate | date : "yyyy-MM-dd" }}</td>
       <td>
-        {{person.photoFileName}}
+        <img *ngIf="person.photoFileName" src="../../assets/imageuploads/{{person.photoFileName}}" />
       </td>
       <td>
         <ul  *ngFor="let interest of (person.interests ? person.interests.slice(0,3): [])" class="list-group list-group-flush">

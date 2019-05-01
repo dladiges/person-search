@@ -8,13 +8,22 @@ import { environment } from '../../environments/environment';
 })
 export class SeedDataComponent {
   public success: boolean;
+  public failure: boolean;
 
   constructor(private http: HttpClient) { }
 
   public seedData() {
+
+    this.failure = false;
+    this.success = false;
+
     this.http.post(environment.personapi + 'data/seed', "Seed Test Data")
       .subscribe(result => {
-      this.success = true;
-    }, error => console.error(error));
+        this.success = true;
+      }, error => {
+          console.error(error);
+          this.failure = true;
+        }
+      );
   }
 }

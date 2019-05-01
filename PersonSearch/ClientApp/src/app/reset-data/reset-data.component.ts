@@ -8,7 +8,8 @@ import { environment } from '../../environments/environment';
 })
 
 export class ResetDataComponent {
-  public success: boolean;
+  public success: boolean = false;
+  public failure: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -16,6 +17,9 @@ export class ResetDataComponent {
     this.http.post(environment.personapi + 'data/reset', "Reset Database")
       .subscribe(result => {
         this.success = true;
-      }, error => console.error(error));
+      }, error => {
+          console.error(error);
+          this.failure = true;
+      } );
   }
 }
