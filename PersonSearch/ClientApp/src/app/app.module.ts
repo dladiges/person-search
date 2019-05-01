@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { AddPersonComponent } from './add-person/add-person.component';
 import { SeedDataComponent } from './seed-data/seed-data.component';
 import { ResetDataComponent } from './reset-data/reset-data.component';
 
@@ -16,7 +15,6 @@ import { ResetDataComponent } from './reset-data/reset-data.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    AddPersonComponent,
     SeedDataComponent,
     ResetDataComponent,
   ],
@@ -27,7 +25,6 @@ import { ResetDataComponent } from './reset-data/reset-data.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'add-person', component: AddPersonComponent },
       { path: 'seed-data', component: SeedDataComponent },
       { path: 'reset-data', component: ResetDataComponent },
     ])
