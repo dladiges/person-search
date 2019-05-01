@@ -13,6 +13,12 @@ namespace PersonData
             this.searchContext = context;
         }
 
+        /// <summary>
+        /// Search for a given text string in either given or family (first or last) names
+        /// </summary>
+        /// <param name="searchText">Text string to search for</param>
+        /// <param name="maxResultCount">maximum of results to return</param>
+        /// <returns>Return a collection of Person entities with a maximum count of maxResultCount</returns>
         public List<Person> SearchPeople(string searchText, int maxResultCount)
         {
             if (string.IsNullOrWhiteSpace(searchText))

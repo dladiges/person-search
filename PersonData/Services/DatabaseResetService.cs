@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PersonData
+﻿namespace PersonData
 {
     public class DatabaseResetService : IDatabaseResetService
     {
@@ -13,6 +9,10 @@ namespace PersonData
             this.context = context;
         }
 
+        /// <summary>
+        /// Summarily clears the database.
+        /// Does not recreate the database. 
+        /// </summary>
         public void Reset()
         {
             context.Database.EnsureDeleted();
